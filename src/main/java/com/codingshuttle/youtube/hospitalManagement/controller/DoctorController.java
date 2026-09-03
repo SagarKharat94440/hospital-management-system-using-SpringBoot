@@ -17,9 +17,15 @@ public class DoctorController {
 
     private final AppointmentService appointmentService;
 
-    @GetMapping("/appointments")
-    public ResponseEntity<List<AppointmentResponseDto>> getAllAppointmentsOfDoctor() {
-        return ResponseEntity.ok(appointmentService.getAllAppointmentsOfDoctor(1L));
+    @GetMapping("/test")
+    public String test() {
+        return "Doctor Controller is working";
     }
 
+    @GetMapping("/appointments")
+    public ResponseEntity<List<AppointmentResponseDto>> getAllAppointmentsOfDoctor() {
+        return ResponseEntity.ok(
+                appointmentService.getAllAppointmentsOfDoctor(1L)
+        );
+    }
 }

@@ -2,6 +2,7 @@ package com.codingshuttle.youtube.hospitalManagement;
 
 import com.codingshuttle.youtube.hospitalManagement.entity.Patient;
 import com.codingshuttle.youtube.hospitalManagement.repository.PatientRepository;
+import com.codingshuttle.youtube.hospitalManagement.service.PatientService;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
