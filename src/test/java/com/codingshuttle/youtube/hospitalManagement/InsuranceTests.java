@@ -3,7 +3,6 @@ package com.codingshuttle.youtube.hospitalManagement;
 import com.codingshuttle.youtube.hospitalManagement.entity.Appointment;
 import com.codingshuttle.youtube.hospitalManagement.entity.Insurance;
 import com.codingshuttle.youtube.hospitalManagement.entity.Patient;
-import com.codingshuttle.youtube.hospitalManagement.service.AppointmentService;
 import com.codingshuttle.youtube.hospitalManagement.service.InsuranceService;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,9 +17,6 @@ public class InsuranceTests {
     @Autowired
     private InsuranceService insuranceService;
 
-    @Autowired
-    private AppointmentService appointmentService;
-
     @Test
     public void testInsurance() {
         Insurance insurance = Insurance.builder()
@@ -33,7 +29,7 @@ public class InsuranceTests {
 
         System.out.println(patient);
 
-        var newPatient = insuranceService.disaccociateInsuranceFromPatient(patient.getId());
+        var newPatient = insuranceService.disassociateInsuranceFromPatient(patient.getId());
 
         System.out.println(newPatient);
     }
@@ -41,7 +37,7 @@ public class InsuranceTests {
 
     @Test
     public void testCreateAppointment() {
-        Appointment appointment = Appointment.builder()
+        Appointment.builder()
                 .appointmentTime(LocalDateTime.of(2025, 11, 1, 14, 0, 0))
                 .reason("Cancer")
                 .build();
